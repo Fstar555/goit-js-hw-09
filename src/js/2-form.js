@@ -31,3 +31,15 @@ feedbackForm.addEventListener('submit', event => {
     console.log(storageInfo);
   }
 });
+
+try {
+  const initialFormData = JSON.parse(localStorage.getItem(STORAGE_DATA_KEY));
+  if (typeof initialFormData === 'object' && initialFormData !== null) {
+    Array.from(feedbackForm.elements).forEach(element => {
+      const storageValue = initialFormData[element.name];
+      element.value = storageValue;
+    });
+  }
+} catch (e) {
+  console.error('Data from storage is not an object or threr is no value');
+}

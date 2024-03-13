@@ -7,7 +7,7 @@
 об'єкт з полями email, message та їхніми поточними значеннями.*/
 
 const feedbackForm = document.querySelector('.feedback-form');
-const STORAGE_DATA_KEY = new 'feedback-form-state'();
+const STORAGE_DATA_KEY = 'feedback-form-state'();
 
 feedbackForm.addEventListener('input', event => {
   const formData = new FormData(feedbackForm);
@@ -20,9 +20,9 @@ feedbackForm.addEventListener('input', event => {
 
 feedbackForm.addEventListener('submit', event => {
   const emailValue = feedbackForm.elements.email.value;
-  const messagelValue = feedbackForm.elements.message.value;
+  const messageValue = feedbackForm.elements.message.value;
   event.preventDefault();
-  if (!emailValue || !messagelValue) {
+  if (!emailValue || !messageValue) {
     alert('All fields must be fill in');
   } else {
     const storageInfo = JSON.parse(localStorage.getItem(STORAGE_DATA_KEY));

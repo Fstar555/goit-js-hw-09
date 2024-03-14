@@ -7,7 +7,7 @@
 об'єкт з полями email, message та їхніми поточними значеннями.*/
 
 const feedbackForm = document.querySelector('.feedback-form');
-const STORAGE_DATA_KEY = 'feedback-form-state'();
+const STORAGE_DATA_KEY = 'feedback-form-state';
 
 feedbackForm.addEventListener('input', event => {
   const formData = new FormData(feedbackForm);
